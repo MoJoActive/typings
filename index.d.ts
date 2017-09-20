@@ -141,6 +141,4 @@ declare namespace mojo {
      * @see {@link https://github.com/mzabriskie/axios}
      */
     function ajax<T>(config: Axios.AxiosXHRConfig<T>): Axios.IPromise<Axios.AxiosXHR<T>>;
-
-    function test(str: string)
 }
