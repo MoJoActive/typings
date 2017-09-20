@@ -1,3 +1,5 @@
+import { AxiosRequestConfig, AxiosPromise }  from 'mojo-ajax';
+
 // Type definitions for mojo
 // Project: MarkertCarpenter
 // Definitions by: Travis Lockcuff <tlockcuff@mojoactive.com>
@@ -140,5 +142,8 @@ declare namespace mojo {
      * 
      * @see {@link https://github.com/mzabriskie/axios}
      */
-    function ajax<T>(config: Axios.AxiosXHRConfig<T>): Axios.IPromise<Axios.AxiosXHR<T>>;
+    
+    function ajax(config: AxiosRequestConfig): AxiosPromise;
 }
+
+
