@@ -1,8 +1,5 @@
 {
   "name": "@types/mojo",
   "version": "1.0.1",
-  "license": "MIT",
-  "dependencies": {
-    "mojo-ajax": "TLockcuff/mojo-ajax"
-  }
+  "license": "MIT"
 }

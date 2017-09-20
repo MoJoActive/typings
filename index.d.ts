@@ -1,5 +1,3 @@
-import { AxiosRequestConfig, AxiosPromise }  from 'mojo-ajax';
-
 // Type definitions for mojo
 // Project: MarkertCarpenter
 // Definitions by: Travis Lockcuff <tlockcuff@mojoactive.com>
@@ -11,7 +9,6 @@ declare interface String {
      */
     format(string: string): string;
 }
-
 
 interface IHash {
     /**
@@ -142,8 +139,45 @@ declare namespace mojo {
      * 
      * @see {@link https://github.com/mzabriskie/axios}
      */
-    
     function ajax(config: AxiosRequestConfig): AxiosPromise;
 }
 
-
+/**
+ * Axios Definitions
+ */
+interface AxiosRequestConfig {
+    url?: string;
+    method?: string;
+    baseURL?: string;
+    headers?: any;
+    params?: any;
+    paramsSerializer?: (params: any) => string;
+    data?: any;
+    timeout?: number;
+    withCredentials?: boolean;
+    responseType?: string;
+    xsrfCookieName?: string;
+    xsrfHeaderName?: string;
+    onUploadProgress?: (progressEvent: any) => void;
+    onDownloadProgress?: (progressEvent: any) => void;
+    maxContentLength?: number;
+    validateStatus?: (status: number) => boolean;
+    maxRedirects?: number;
+    httpAgent?: any;
+    httpsAgent?: any;
+    cancelToken?: CancelToken;
+}
+interface AxiosResponse {
+    data: any;
+    status: number;
+    statusText: string;
+    headers: any;
+    config: AxiosRequestConfig;
+}
+interface AxiosError extends Error {
+    config: AxiosRequestConfig;
+    code?: string;
+    request?: any;
+    response?: AxiosResponse;
+}
+interface AxiosPromise extends Promise<AxiosResponse> {}
